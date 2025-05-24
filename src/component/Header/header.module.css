@@ -116,6 +116,7 @@ a {
   display: flex;
   align-items: end;
 }
+
 .cart span {
   position: absolute;
   top: 0;

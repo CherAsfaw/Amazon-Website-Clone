@@ -5,6 +5,7 @@ import { BiCart } from "react-icons/bi";
 import { IoMdArrowDropdown } from "react-icons/io";
 import HeaderStyle from "./header.module.css";
 import LowerHeader from "./LowerHeader";
+import {Link} from 'react-router-dom'
 
 function Header() {
   return (
@@ -12,14 +13,14 @@ function Header() {
       <section className={HeaderStyle.header_container}>
         <div className={HeaderStyle.logo_container}>
           {/* logo */}
-          <a href="/">
+          <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="Amazon logo"
             />
-          </a>
+          </Link>
           {/* delivery */}
-          <a href="">
+          <Link to="">
             <div className={HeaderStyle.delivery}>
               <div>
                 <span>{<LocationOnOutlinedIcon />}</span>
@@ -29,7 +30,7 @@ function Header() {
                 <span>Ethiopia</span>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div className={HeaderStyle.search}>
           {/* Search */}
@@ -55,24 +56,23 @@ function Header() {
               <option value="">EN</option>
             </select>
           </div>
-          <a href="">
+          <Link to="/auth">
             <div>
               <p>Hello, sign in</p>
               <span>Account & Lists</span>
               <IoMdArrowDropdown />
             </div>
-          </a>
+          </Link>
           {/* order */}
-          <a href="">
+          <Link to="/order">
             <p>Returns</p>
             <span>& Orders</span>
-          </a>
-          {/* cart */}
-          <a to="/cart" className={HeaderStyle.cart}>
+          </Link>
+          <Link to="/cart" className={HeaderStyle.cart}>
             {<BiCart size={35}/>}
             <span>0</span>
             <p>Cart</p>
-          </a>
+          </Link>
         </div>
       </section>
       <LowerHeader/>
