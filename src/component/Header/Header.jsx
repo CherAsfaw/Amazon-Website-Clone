@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { BiCart } from "react-icons/bi";
@@ -6,10 +6,14 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import HeaderStyle from "./header.module.css";
 import LowerHeader from "./LowerHeader";
 import {Link} from 'react-router-dom'
+import { DataContext } from "../DataProvider/DataProvider";
 
 function Header() {
+
+        const [{basket}, dispatch]  = useContext(DataContext)
+  console.log(basket.length);
   return (
-    <section>
+    <section className={HeaderStyle.fixed}>
       <section className={HeaderStyle.header_container}>
         <div className={HeaderStyle.logo_container}>
           {/* logo */}
@@ -70,7 +74,7 @@ function Header() {
           </Link>
           <Link to="/cart" className={HeaderStyle.cart}>
             {<BiCart size={35}/>}
-            <span>0</span>
+            <span>{ basket.length}</span>
             <p>Cart</p>
           </Link>
         </div>
