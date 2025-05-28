@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-     "predeploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "@mui/material": "^7.1.0",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
+    "firebase": "^11.8.1",
     "numeral": "^2.0.6",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",

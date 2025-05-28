@@ -82,8 +82,8 @@
   border-bottom:#DFDFDF solid 1px ;
 }
 a {
-  text-decoration: none;
-  color: #fff;
+  text-decoration: none !important;
+  color: #fff !important;
 }
 .order_container {
   display: flex;
@@ -154,6 +154,10 @@ a {
 }
 .Lower_container ul li {
   padding: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 .Lower_container ul li:first-child {
  display: flex;
