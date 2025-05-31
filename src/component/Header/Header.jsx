@@ -7,10 +7,11 @@ import HeaderStyle from "./header.module.css";
 import LowerHeader from "./LowerHeader";
 import {Link} from 'react-router-dom'
 import { DataContext } from "../DataProvider/DataProvider";
+import {auth} from '../../Utility/firebase'
 
 function Header() {
 
-  const [{ basket }, dispatch] = useContext(DataContext)
+  const [{user, basket }, dispatch] = useContext(DataContext)
   
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount
@@ -51,7 +52,7 @@ function Header() {
           <input type="text" name="" id="" placeholder="Search Amazon" />
 
           <span>
-            <SearchIcon sx={{ fontSize: 25 }} />
+            <SearchIcon sx={{ fontSize: 48 }} />
           </span>
         </div>
         <div className={HeaderStyle.order_container}>
@@ -65,11 +66,21 @@ function Header() {
               <option value="">EN</option>
             </select>
           </div>
-          <Link to="/auth">
+          <Link to={!user ? "/auth" : "/"}>
             <div>
-              <p>Hello, sign in</p>
-              <span>Account & Lists</span>
-              <IoMdArrowDropdown />
+              {user ? (
+                <>
+                  <p>Hello {user?.email?.split("@")[0]}</p>
+                  <span onClick={() => auth.signOut()}>Sign Out</span>
+                  <IoMdArrowDropdown />
+                </>
+              ) : (
+                <>
+                  <p>Hello, sign in</p>
+                  <span>Account & Lists</span>
+                  <IoMdArrowDropdown />
+                </>
+              )}
             </div>
           </Link>
           {/* order */}
@@ -78,13 +89,13 @@ function Header() {
             <span>& Orders</span>
           </Link>
           <Link to="/cart" className={HeaderStyle.cart}>
-            {<BiCart size={35}/>}
+            {<BiCart size={35} />}
             <span>{totalItem}</span>
             <p>Cart</p>
           </Link>
         </div>
       </section>
-      <LowerHeader/>
+      <LowerHeader />
     </section>
   );
 }
