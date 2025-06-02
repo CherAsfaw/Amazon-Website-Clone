@@ -17,7 +17,7 @@ function Header() {
     return item.amount + amount
   }, 0)
     
-  console.log(basket.length);
+  // console.log(basket.length);
   return (
     <section className={HeaderStyle.fixed}>
       <section className={HeaderStyle.header_container}>
