@@ -33,7 +33,7 @@ function Header() {
           <Link to="">
             <div className={HeaderStyle.delivery}>
               <div>
-                <span>{<LocationOnOutlinedIcon />}</span>
+                <span>{<LocationOnOutlinedIcon fontSize="large" />}</span>
               </div>
               <div>
                 <p>Deliver to</p>
@@ -52,7 +52,8 @@ function Header() {
           <input type="text" name="" id="" placeholder="Search Amazon" />
 
           <span>
-            <SearchIcon sx={{ fontSize: 48 }} />
+            {/* <SearchIcon sx={{ fontSize: 48 }} /> */}
+            <SearchIcon style={{ fontSize: 48 }} />
           </span>
         </div>
         <div className={HeaderStyle.order_container}>
@@ -67,7 +68,7 @@ function Header() {
             </select>
           </div>
           <Link to={!user ? "/auth" : "/"}>
-            <div>
+            <div className={HeaderStyle.account}>
               {user ? (
                 <>
                   <p>Hello {user?.email?.split("@")[0]}</p>
@@ -84,15 +85,19 @@ function Header() {
             </div>
           </Link>
           {/* order */}
-          <Link to="/order">
-            <p>Returns</p>
-            <span>& Orders</span>
-          </Link>
-          <Link to="/cart" className={HeaderStyle.cart}>
-            {<BiCart size={35} />}
-            <span>{totalItem}</span>
-            <p>Cart</p>
-          </Link>
+          <div className={HeaderStyle.order}>
+            <Link to="/order">
+              <p>Returns</p>
+              <span>& Orders</span>
+            </Link>
+          </div>
+          <div>
+            <Link to="/cart" className={HeaderStyle.cart}>
+              {<BiCart size={45} />}
+              <span>{totalItem}</span>
+              <p className={HeaderStyle.cartText}>Cart</p>
+            </Link>
+          </div>
         </div>
       </section>
       <LowerHeader />

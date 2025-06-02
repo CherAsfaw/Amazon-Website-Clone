@@ -17,13 +17,13 @@
 }
 .logo_container {
   display: flex;
-  max-width: 250px;
+  max-width: 300px;
   align-items: center;
   justify-content: center;
 }
 .logo_container img {
   width: 80%;
-  padding-top: 5px;
+  padding-top: 15px;
   margin-left: 20px;
   vertical-align: middle;
 }
@@ -32,62 +32,79 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  font-weight: bold;
+  font-weight: bold; 
+  width: 120px;
+}
+.delivery svg{
+
 }
 .delivery p {
-  font-size: 12px;
+  font-size: 16px;
   color: #c0c0c0;
+  padding: 0;
+  margin: 0;
 }
+.delivery span {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
 .search {
+  display: flex;
+  height: 50px;
+  /* align-items: center; */
+  border: 2px solid #febd69;
+  border-radius: 4px;
+  overflow: hidden;
+  flex: 1;
+  min-width: 700px;
+  background-color: white;
+}
+
+.search select {
+  padding: 8px;
+  border: none;
+  background: #f1efef;
+  font-size: 14px;
+  outline: none;
+  width: 58px;
+}
+.search select:hover {
+  background-color: #D4D4D4;
+}
+
+
+.search input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  
+}
+
+.search span {
+  padding: 8px 12px;
+  background-color: #febd69;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  flex: 1;
-  overflow: hidden;
-  border-radius: 10px;
-  font-weight: bold;
-  min-width: 260px;
+  cursor: pointer;
 }
-.search input,
-.search select {
-  padding: 10px;
-  outline: 1px solid #fff;
-}
-.search select {
-  border: none;
-  background-color: #dfdfdf;
-  width: 56px;
-}
-.search input {
-  width: 100%;
-  margin-right: -2px;
-  border: 1px solid #fff;
-  min-width: 200px;
-}
-.search svg {
-  padding: 7px;
-  color: #1a1a1a;
-  background-color: #fac47e;
-  margin-top: 4px;
-}
-.search svg:hover {
-  background-color: #ffb04b;
-}
-.search:focus-within {
-  border: 2px solid #ffb04b;
-  border-bottom: #dfdfdf solid 1px;
-}
+
+
+
+
 a {
   text-decoration: none !important;
   color: #fff !important;
 }
 .order_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 10px;
-  max-width: 450px;
+  width: 550px;
 }
 .order_container p {
   font-size: 12px;
@@ -95,8 +112,9 @@ a {
 .language {
   width: 100px;
   display: flex;
-  /* padding: 10px; */
-  margin: 0px 1px;
+  padding: 10px;
+  margin-top: 12px;
+ 
 }
 .language img {
   width: 40%;
@@ -111,6 +129,15 @@ a {
 .language svg {
   background-color: #858484;
 }
+.account p, .order p {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 0;
+ 
+}
+.account span, .order span{
+  font-size: 20px;
+}
 .cart {
   position: relative;
   display: flex;
@@ -120,13 +147,17 @@ a {
 .cart span {
   position: absolute;
   top: 0;
-  font-size: 20px;
+  font-size: 28px;
   left: 14px;
   background-color: #1a1a1a;
   color: #ffb04b;
 }
 .cart p {
   font-weight: bold;
+  font-size: 18px;
+}
+.cartText {
+  margin-top: 20px;
 }
 
 .logo_container a:hover,
