@@ -6,7 +6,7 @@ import { auth } from './Utility/firebase';
 
 
 
-function App() {
+function App() { 
   const [{ user }, dispatch] = useContext(DataContext)
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
