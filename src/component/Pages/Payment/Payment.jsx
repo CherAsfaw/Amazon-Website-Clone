@@ -41,7 +41,7 @@ function Payment() {
         method: "POST",
         url: `/payment/create?total=${total * 100}`,
       });
-      // console.log(response.data);
+      console.log(response.data);
       const clientSecret = response.data?.clientSecret;
 
       // client side confirmation

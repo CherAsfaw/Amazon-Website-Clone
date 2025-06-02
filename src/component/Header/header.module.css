@@ -128,13 +128,13 @@ a {
   background-color: #858484;
 }
 .account p, .order p {
-  font-size: 16px;
+  font-size: 12px;
   margin-top: 8px;
   margin-bottom: 0;
  
 }
 .account span, .order span{
-  font-size: 20px;
+  font-size: 14px;
 }
 .cart {
   position: relative;
@@ -152,10 +152,10 @@ a {
 }
 .cart p {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 }
 .cartText {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .logo_container a:hover,
