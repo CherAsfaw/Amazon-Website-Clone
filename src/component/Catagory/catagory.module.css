@@ -22,7 +22,11 @@
 }
 .catagory h2 {
   width: 90%;
-  font-size: 16px;
+  font-size: 22px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 .catagory p {
   font-size: 12px;
@@ -31,9 +35,9 @@
   margin-bottom: 5px;
 }
 
-/* catagory srtling */
+/* catagory styling */
 .catagory_container {
-  position: relative;
+  /* position: relative;
   margin-top: -300px;
   display: flex;
   justify-content: space-between;
@@ -47,5 +51,14 @@
   flex: 1 0 290px;
   padding-left: 10px;
   padding-right: 10px;
-  min-width: 290px;
+  min-width: 290px; */
+  position: relative;
+  margin-top: -10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  max-width: 1600px;
+  gap: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  place-items: center;
 }
