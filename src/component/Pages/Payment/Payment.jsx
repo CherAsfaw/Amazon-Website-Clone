@@ -126,7 +126,9 @@ function Payment() {
                   <button type="submit" disabled={processing}>
                     {processing ? (
                       <div className={classes.loading}>
-                        <ClipLoader color="gray" size={12} />
+                        <p>
+                          <ClipLoader color="gray" size={12} />
+                        </p>
                         <p>please wait ..</p>
                       </div>
                     ) : (
