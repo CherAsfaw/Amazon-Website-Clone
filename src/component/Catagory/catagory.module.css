@@ -1,15 +1,14 @@
 .catagory {
   height: 350px;
-  width: 350px;
+  width: 330px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  /* margin: 0 10px; */
 }
 .catagory img {
   width: 100%;
   height: 250px;
+  margin-left: 10px;
   object-fit: contain;
-  /* padding: 20px 0px 15px; */
   padding: 0 10px;
 }
 .catagory a {
@@ -38,12 +37,28 @@
 /* catagory styling */
 .catagory_container {
   position: relative;
-  margin-top: -10%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin-top: -20%;
   max-width: 1600px;
-  gap: 50px;
-  margin-right: auto;
-  margin-left: auto;
-  place-items: center;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* use auto instead of scroll for better UX */
+  gap: 20px;
+  padding: 10px 0; /* optional: space around items */
+  scroll-behavior: smooth;
+  /* margin-right: 20px; */
+}
+.catagory_container::-webkit-scrollbar {
+  display: none; /* hides scrollbar in WebKit browsers */
+}
+
+.inner_wrapper {
+  display: flex;
+  justify-content:  center;
+}
+
+@media screen and (max-width: 760px) {
+  /* Your mobile styles go here */
+  .inner_wrapper {
+   margin-left: 10px;
+  }
 }

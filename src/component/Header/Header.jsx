@@ -30,7 +30,7 @@ function Header() {
             />
           </Link>
           {/* delivery */}
-          <Link to="">
+          <Link to="" className={HeaderStyle.location}>
             <div className={HeaderStyle.delivery}>
               <div>
                 <span>{<LocationOnOutlinedIcon fontSize="large" />}</span>

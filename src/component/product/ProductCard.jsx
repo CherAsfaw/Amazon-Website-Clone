@@ -38,7 +38,7 @@ function ProductCard({ product, flex, renderDescription, renderAdd }) {
         </Link>
       </div>
       <div className={classes.wrapper}>
-        <h4>{title}</h4>
+        <h6>{title}</h6>
         {renderDescription && (
           <div style={{ maxWidth: "750px" }}>{description}</div>
         )}

@@ -55,7 +55,7 @@
   border-radius: 4px;
   overflow: hidden;
   flex: 1;
-  min-width: 700px;
+  min-width: 300px;
   background-color: white;
 }
 
@@ -89,9 +89,6 @@
   justify-content: center;
   cursor: pointer;
 }
-
-
-
 
 a {
   text-decoration: none !important;
@@ -131,6 +128,7 @@ a {
   font-size: 14px;
   margin-top: 8px;
   margin-bottom: 0;
+  white-space: nowrap;
  
 }
 .account span, .order span{
@@ -145,7 +143,7 @@ a {
 .cart span {
   position: absolute;
   top: 0;
-  font-size: 28px;
+  font-size: 20px;
   left: 14px;
   background-color: #1a1a1a;
   color: #ffb04b;
@@ -175,12 +173,23 @@ a {
 }
 .Lower_container ul {
   display: flex;
+  flex-direction: row;
   list-style: none;
   gap: 5px;
   margin-bottom: 0;
+  flex-wrap: nowrap; /* This prevents wrapping */
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+  white-space: nowrap; /* Prevents text wrapping inside items */
+  padding: 10px 0; /* Add some vertical padding */
 }
+.Lower_container ul::-webkit-scrollbar {
+  display: none; /* hides scrollbar in WebKit browsers */
+}
+
 .Lower_container ul li {
   padding: 10px;
+  white-space: nowrap; /* Prevents text inside li from wrapping */
+  flex-shrink: 0; /* Prevents items from shrinking */
 }
 a {
   text-decoration: none;
@@ -190,8 +199,9 @@ a {
   display: flex;
   gap: 2px;
   align-items: center;
+  
 }
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   .header_container {
     display: flex;
     flex-direction: column !important;
@@ -202,5 +212,31 @@ a {
   }
   .language {
     display: none;
+  }
+} */
+
+@media screen and (max-width: 760px) {
+  /* Your mobile styles go here */
+/* main header */
+.location {
+  display: none;
+}
+.header_container img {
+  width: 60px;
+}
+ .search{
+  width: 200px;
+}
+.language, .order {
+  display: none;
+}
+
+  /* lower header */
+  .Lower_container {
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .Lower_container::-webkit-scrollbar {
+    display: none; /* hides scrollbar in WebKit browsers */
   }
 }
